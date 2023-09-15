@@ -14,8 +14,8 @@ public class Main {
 		Aluno a2 = new Aluno("112", "Maria", "maria@email.com");
 		
 		
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("crud");
-		EntityManager em = emf.createEntityManager();
+//		EntityManagerFactory emf = Persistence.createEntityManagerFactory("crud");
+//		EntityManager em = emf.createEntityManager();
 		
 //		em.getTransaction().begin();
 //		//em.persist(a1);
