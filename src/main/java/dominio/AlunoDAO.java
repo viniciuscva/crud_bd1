@@ -53,7 +53,7 @@ public class AlunoDAO {
 			entityManager.getTransaction().commit();
 			return true;
 		} catch (Exception e) {
-			entityManager.getTransaction().rollback();
+			//entityManager.getTransaction().rollback();
 			System.out.println(e);
 			return false;
 		}

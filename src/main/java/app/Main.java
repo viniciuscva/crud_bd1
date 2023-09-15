@@ -5,19 +5,20 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import dominio.Aluno;
+import dominio.AlunoDAO;
 
 public class Main {
 
 	public static void main(String[] args) {
 		Aluno a1 = new Aluno("111", "Joao", "joao@email.com");
-		Aluno a2 = new Aluno("112", "Maria", "maria@email.com");a2 = new Aluno("112", "Maria", "maria@email.com");
+		Aluno a2 = new Aluno("112", "Maria", "maria@email.com");
 		
 		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("crud");
 		EntityManager em = emf.createEntityManager();
 		
 //		em.getTransaction().begin();
-//		em.persist(a1);
+//		//em.persist(a1);
 //		em.persist(a2);
 //		em.getTransaction().commit();
 		
@@ -39,8 +40,8 @@ public class Main {
 		
 //		Aluno a1 = new Aluno("111", "Joao", "joao@email.com");
 //		Aluno a2 = new Aluno("112", "Maria", "maria@email.com");
-//		AlunoDAO alunoDAO = AlunoDAO.getInstance();
-//		alunoDAO.persist(a1);
+		AlunoDAO alunoDAO = AlunoDAO.getInstance();
+		alunoDAO.persist(a1);
 //		alunoDAO.persist(a2);
 		//Aluno a = alunoDAO.getByMatricula("111");
 		//a1.setEmail("joao@novoemail.com");
