@@ -5,14 +5,12 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import dominio.Aluno;
-import dominio.Aluno2;
-import dominio.AlunoDAO;
 
 public class Main {
 
 	public static void main(String[] args) {
-//		Aluno a1 = new Aluno("111", "Joao", "joao@email.com");
-//		Aluno a2 = new Aluno("112", "Maria", "maria@email.com");a2 = new Aluno("112", "Maria", "maria@email.com");
+		Aluno a1 = new Aluno("111", "Joao", "joao@email.com");
+		Aluno a2 = new Aluno("112", "Maria", "maria@email.com");a2 = new Aluno("112", "Maria", "maria@email.com");
 		
 		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("crud");
