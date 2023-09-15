@@ -1,29 +1,44 @@
 package dominio;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OrderColumn;
 import javax.persistence.Table;
 
+
+//@Table(name = "Alunos2")
 @Entity
-@Table(name = "Alunos2")
-public class Aluno2 {
+@Table(name="Aluno2")
+//@Data
+//@AllArgsConstructor
+//@NoArgsConstructor
+//@Builder
+public class Aluno2 implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int matricula;
+	public int matricula;
 	//@Column
 	//@Column(name = "nome", length = 128, nullable = false, unique = true)
-	private String nome;
-	private String email;
+	public String nome;
+	
+	@ElementCollection
+    @OrderColumn(name = "emailscolumn")
+    public List<String> emails;
 	
 	public Aluno2() {}
 
-	public Aluno2(int matricula, String nome, String email) {
+	public Aluno2(int matricula, String nome, ArrayList<String> emails) {
 		super();
 		this.matricula = matricula;
 		this.nome = nome;
-		this.email = email;
+		this.emails = emails;
 	}
 
 	public int getMatricula() {
@@ -42,17 +57,17 @@ public class Aluno2 {
 		this.nome = nome;
 	}
 
-	public String getEmail() {
-		return email;
+	public List<String> getEmails() {
+		return emails;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmails(ArrayList<String> emails) {
+		this.emails = emails;
 	}
 
 	@Override
 	public String toString() {
-		return "Aluno [matricula=" + matricula + ", nome=" + nome + ", email=" + email + "]";
+		return "Aluno [matricula=" + matricula + ", nome=" + nome + ", email=" + emails + "]";
 	}
 	
 	
